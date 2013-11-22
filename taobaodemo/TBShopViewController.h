@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBShopViewController : UIViewController
+@interface TBShopViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    IBOutlet UIView *topView;
+    IBOutlet UIView *bottomView;
+    IBOutlet UITableView *myTableView;
+    IBOutlet UIButton *check;
+    IBOutlet UIButton *titlebtn;
+    IBOutlet UILabel *numLab;
+    IBOutlet UIButton *moveBtn;
+    IBOutlet UIButton *deleteBtn;
+    IBOutlet UILabel *allLab;
+    IBOutlet UILabel *priceLab;
+    IBOutlet UIButton *buyBtn;
+}
 
 @end

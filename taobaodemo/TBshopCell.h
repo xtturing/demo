@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TBshopCell : UITableViewCell
-
+#import "StrikeThroughLabel.h"
+@interface TBshopCell : UITableViewCell{
+    IBOutlet UIButton *check;
+    IBOutlet UIView *imgView;
+    IBOutlet UILabel *titleLab;
+    IBOutlet UILabel *detailLab;
+    IBOutlet UIButton *numbtn;
+    IBOutlet StrikeThroughLabel *pLab1;
+    IBOutlet UILabel *pLab2;
+    IBOutlet UILabel *plab3;
+    IBOutlet UIView *line3;
+    Boolean isCheck;
+}
+@property(nonatomic,copy) NSString *imageText;
 @end

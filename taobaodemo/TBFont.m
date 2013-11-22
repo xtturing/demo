@@ -11,18 +11,22 @@
 @implementation TBFont
 
 + (UIFont *)fzltFontOfSize:(CGFloat)fontSize{
-    UIFont *fzltFont = [UIFont fontWithName:@"FZLanTingHeiS-R-GB" size:fontSize];
+    UIFont *fzltFont = [UIFont fontWithName:@"FZLanTingHei-R-GBK" size:fontSize];
     return fzltFont;
 }
 
 
-+ (UIFont *)fzs3FontOfSize:(CGFloat)fontSize{
-    UIFont *fzs3Font = [UIFont fontWithName:@"FZS3JW" size:fontSize];
++ (UIFont *)DINBoldFontOfSize:(CGFloat)fontSize{
+    UIFont *fzs3Font = [UIFont fontWithName:@"DIN-Bold" size:fontSize];
     return fzs3Font;
 }
 
 + (UIFont *)DINMediumFontOfSize:(CGFloat)fontSize {
     UIFont *fzs3Font = [UIFont fontWithName:@"DIN-Medium" size:fontSize];
+    return fzs3Font;
+}
++ (UIFont *)DINRegularFontOfSize:(CGFloat)fontSize {
+    UIFont *fzs3Font = [UIFont fontWithName:@"DIN-Regular" size:fontSize];
     return fzs3Font;
 }
 @end

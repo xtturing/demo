@@ -7,6 +7,9 @@
 //
 
 #import "TBshopCell.h"
+#import "UIColor+Taobao.h"
+#import "TBFont.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation TBshopCell
 
@@ -25,5 +28,42 @@
 
     // Configure the view for the selected state
 }
-
+-(void)drawRect:(CGRect)rect{
+    titleLab.font=[TBFont fzltFontOfSize:14];
+    titleLab.textColor=[UIColor colorFromRGB:0x444444];
+    detailLab.font=[TBFont fzltFontOfSize:13];
+    detailLab.textColor=[UIColor colorFromRGB:0x888888];
+    pLab1.font=[TBFont DINBoldFontOfSize:14];
+    pLab1.textColor=[UIColor colorFromRGB:0x888888];
+    pLab1.strikeThroughEnabled = YES;
+    pLab2.font=[TBFont DINBoldFontOfSize:14];
+    pLab2.textColor=[UIColor colorFromRGB:0x444444];
+    plab3.font=[TBFont DINBoldFontOfSize:14];
+    plab3.textColor=[UIColor colorFromRGB:0x43AD55];
+    line3.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"分割线平铺"]];
+    isCheck=NO;
+    [check addTarget:self action:@selector(checkAction:) forControlEvents:UIControlEventTouchUpInside];
+    [numbtn setTintColor:[UIColor blackColor]];
+    
+}
+-(void)checkAction:(id)sender{
+    if(isCheck){
+        [check setImage:[UIImage imageNamed:@"勾选框_未勾选"] forState:UIControlStateNormal];
+        isCheck=NO;
+    }else{
+        [check setImage:[UIImage imageNamed:@"勾选框1_已勾选"] forState:UIControlStateNormal];
+        isCheck=YES;
+    }
+}
+-(void)setImageText:(NSString *)imageText{
+    CALayer *layer=[imgView layer];
+    [layer setBorderWidth:1.0];
+    [layer setBorderColor:[[UIColor colorFromRGB:0xededed] CGColor]];
+    UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(1, 1, 73, 73)];
+    imageView.image=[UIImage imageNamed:imageText];
+    CALayer *layer1=[imageView layer];
+    [layer1 setBorderWidth:4.0];
+    [layer1 setBorderColor:[[UIColor colorFromRGB:0xffffff] CGColor]];
+    [imgView addSubview:imageView];
+}
 @end

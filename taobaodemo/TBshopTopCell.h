@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBshopTopCell : UITableViewCell
+@interface TBshopTopCell : UITableViewCell{
+    IBOutlet UIButton *check;
+    IBOutlet UILabel *titleLab;
+    IBOutlet UIView *line1;
+    IBOutlet UIView *line2;
+    Boolean isCheck;
+}
 
 @end

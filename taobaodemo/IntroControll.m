@@ -1,5 +1,5 @@
 #import "IntroControll.h"
-
+#import "UIColor+Taobao.h"
 @implementation IntroControll
 
 
@@ -40,8 +40,10 @@
         //Initial PageView
         pageControl = [[UIPageControl alloc] init];
         pageControl.numberOfPages = pagesArray.count;
+        pageControl.currentPageIndicatorTintColor=[UIColor colorFromRGB:0xFF5500];
+        pageControl.pageIndicatorTintColor=[UIColor colorFromRGB:0x888888];
         [pageControl sizeToFit];
-        [pageControl setCenter:CGPointMake(frame.size.width/2.0, frame.size.height-50)];
+        [pageControl setCenter:CGPointMake(frame.size.width/2.0, frame.size.height+50)];
         [self addSubview:pageControl];
         
         //Create pages
@@ -59,11 +61,11 @@
         }
             
         //start timer
-        timer =  [NSTimer scheduledTimerWithTimeInterval:3.0
-                        target:self
-                        selector:@selector(tick)
-                        userInfo:nil
-                        repeats:YES];
+//        timer =  [NSTimer scheduledTimerWithTimeInterval:5.0
+//                        target:self
+//                        selector:@selector(tick)
+//                        userInfo:nil
+//                        repeats:YES];
         
         [self initShow];
     }

@@ -26,7 +26,7 @@
 // *** FOR FUTURE USE ***
 #define ACOShowSuggestionsOnTop @"ACOShowSuggestionsOnTop"
 
-@interface AutocompletionTableView : UITableView <UITableViewDataSource, UITableViewDelegate>
+@interface AutocompletionTableView : UITableView <UITableViewDataSource, UITableViewDelegate,UIGestureRecognizerDelegate>
 // Dictionary of NSStrings of your auto-completion terms
 @property (nonatomic, strong) NSArray *suggestionsDictionary; 
 
