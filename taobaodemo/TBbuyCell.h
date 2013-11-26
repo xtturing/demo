@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBbuyCell : UITableViewCell
-
+@interface TBbuyCell : UITableViewCell{
+    IBOutlet UIView *imgView;
+    IBOutlet UILabel *titleLab;
+    IBOutlet UILabel *detailLab;
+    IBOutlet UILabel *priceLab;
+    IBOutlet UILabel *totalLab;
+    IBOutlet UIButton *saleBtn;
+    IBOutlet UIView *line;
+}
+@property(nonatomic,copy) NSString *imageText;
 @end

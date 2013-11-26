@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBbuyTitleCell : UITableViewCell
+@interface TBbuyTitleCell : UITableViewCell{
+    IBOutlet UILabel *lab1;
+    IBOutlet UILabel *lab2;
+    IBOutlet UILabel *lab3;
+    IBOutlet UILabel *lab4;
+    IBOutlet UIView *line;
+}
 
 @end

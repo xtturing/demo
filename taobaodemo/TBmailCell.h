@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBmailCell : UICollectionViewCell
-
+@interface TBmailCell : UICollectionViewCell{
+    IBOutlet UIImageView *mailImg;
+}
+@property(nonatomic,copy) NSString *imgText;
 @end

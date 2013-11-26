@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841EB0141839ED9700164963 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB00A1839ED9700164963 /* UIBarButtonItem+WEPopover.m */; };
+		841EB0151839ED9700164963 /* TSPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB00C1839ED9700164963 /* TSPopoverController.m */; };
+		841EB0161839ED9700164963 /* TSPopoverTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB00E1839ED9700164963 /* TSPopoverTouchView.m */; };
+		841EB0171839ED9700164963 /* TSPopoverPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB0111839ED9700164963 /* TSPopoverPopoverView.m */; };
+		841EB0181839ED9700164963 /* TSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB0131839ED9700164963 /* TSActionSheet.m */; };
+		841EB01D183A300200164963 /* AutocompletionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB01C183A300200164963 /* AutocompletionTableView.m */; };
 		841F613D1835CCFB00F799EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F613C1835CCFB00F799EF /* Foundation.framework */; };
 		841F613F1835CCFB00F799EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F613E1835CCFB00F799EF /* CoreGraphics.framework */; };
 		841F61411835CCFB00F799EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F61401835CCFB00F799EF /* UIKit.framework */; };
@@ -21,6 +27,36 @@
 		841F615E1835CCFB00F799EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F61401835CCFB00F799EF /* UIKit.framework */; };
 		841F61661835CCFB00F799EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 841F61641835CCFB00F799EF /* InfoPlist.strings */; };
 		841F61681835CCFB00F799EF /* taobaodemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F61671835CCFB00F799EF /* taobaodemoTests.m */; };
+		841F61C01835F0BB00F799EF /* TBsearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F61BF1835F0BB00F799EF /* TBsearchCell.m */; };
+		841F61C51836095A00F799EF /* UIColor+Taobao.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F61C31836095A00F799EF /* UIColor+Taobao.m */; };
+		841F61CD18360C3F00F799EF /* DIN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 841F61C918360C3F00F799EF /* DIN-Bold.otf */; };
+		841F61CE18360C3F00F799EF /* DIN-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 841F61CA18360C3F00F799EF /* DIN-Medium.otf */; };
+		841F61CF18360C3F00F799EF /* DIN-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 841F61CB18360C3F00F799EF /* DIN-Regular.otf */; };
+		841F61D418360E9000F799EF /* TBFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F61D318360E9000F799EF /* TBFont.m */; };
+		841F61DB18364E6100F799EF /* GBK.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841F61DA18364E6100F799EF /* GBK.ttf */; };
+		8425F7ED18408B8200650C7E /* TBbuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425F7EC18408B8200650C7E /* TBbuyViewController.m */; };
+		8425F7F01840B37500650C7E /* TBbuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425F7EF1840B37500650C7E /* TBbuyCell.m */; };
+		843931DD183C6DC8006D5E72 /* IntroControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 843931D8183C6DC8006D5E72 /* IntroControll.m */; };
+		843931DE183C6DC8006D5E72 /* IntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 843931DA183C6DC8006D5E72 /* IntroModel.m */; };
+		843931DF183C6DC8006D5E72 /* IntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843931DC183C6DC8006D5E72 /* IntroView.m */; };
+		84424FF2183B070E00C925D6 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84424FF1183B070E00C925D6 /* UIViewController+CWPopup.m */; };
+		84424FF5183B172400C925D6 /* TBsearchSmallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84424FF4183B172400C925D6 /* TBsearchSmallCell.m */; };
+		845C452F183F0B8100D278F5 /* TBShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C452E183F0B8100D278F5 /* TBShopViewController.m */; };
+		845C4532183F296F00D278F5 /* TBshopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C4531183F296F00D278F5 /* TBshopCell.m */; };
+		845C4535183F3B2D00D278F5 /* TBshopTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C4534183F3B2D00D278F5 /* TBshopTopCell.m */; };
+		845C4538183F3B4700D278F5 /* TBshopBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C4537183F3B4700D278F5 /* TBshopBottomCell.m */; };
+		845C453B183F3F7400D278F5 /* StrikeThroughLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C453A183F3F7400D278F5 /* StrikeThroughLabel.m */; };
+		84801B461843223D002E30DC /* TBbuyTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84801B451843223D002E30DC /* TBbuyTitleCell.m */; };
+		84801B4918433B83002E30DC /* TBbuyElseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84801B4818433B83002E30DC /* TBbuyElseCell.m */; };
+		84801B4C18433E5C002E30DC /* TBmailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84801B4B18433E5C002E30DC /* TBmailCell.m */; };
+		8488D620183DADE2007254F1 /* TBrecomendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D61F183DADE2007254F1 /* TBrecomendCell.m */; };
+		84A012FA183B365B00E4A4F6 /* NSObject+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A012F3183B365B00E4A4F6 /* NSObject+ABExtras.m */; };
+		84A012FB183B365B00E4A4F6 /* UIImageView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A012F5183B365B00E4A4F6 /* UIImageView+ABExtras.m */; };
+		84A012FC183B365B00E4A4F6 /* UINavigationController+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A012F7183B365B00E4A4F6 /* UINavigationController+ABExtras.m */; };
+		84A012FD183B365B00E4A4F6 /* UIView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A012F9183B365B00E4A4F6 /* UIView+ABExtras.m */; };
+		84A01301183B367000E4A4F6 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A01300183B367000E4A4F6 /* CubeNavigationController.m */; };
+		84A01305183B368300E4A4F6 /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A01304183B368300E4A4F6 /* FlipSquaresNavigationController.m */; };
+		84A0131D183B84F300E4A4F6 /* TBdetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0131C183B84F300E4A4F6 /* TBdetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +70,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841EB0091839ED9700164963 /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
+		841EB00A1839ED9700164963 /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
+		841EB00B1839ED9700164963 /* TSPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverController.h; sourceTree = "<group>"; };
+		841EB00C1839ED9700164963 /* TSPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverController.m; sourceTree = "<group>"; };
+		841EB00D1839ED9700164963 /* TSPopoverTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchView.h; sourceTree = "<group>"; };
+		841EB00E1839ED9700164963 /* TSPopoverTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverTouchView.m; sourceTree = "<group>"; };
+		841EB00F1839ED9700164963 /* TSPopoverTouchesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchesDelegate.h; sourceTree = "<group>"; };
+		841EB0101839ED9700164963 /* TSPopoverPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverPopoverView.h; sourceTree = "<group>"; };
+		841EB0111839ED9700164963 /* TSPopoverPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverPopoverView.m; sourceTree = "<group>"; };
+		841EB0121839ED9700164963 /* TSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionSheet.h; sourceTree = "<group>"; };
+		841EB0131839ED9700164963 /* TSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionSheet.m; sourceTree = "<group>"; };
+		841EB01B183A300200164963 /* AutocompletionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutocompletionTableView.h; sourceTree = "<group>"; };
+		841EB01C183A300200164963 /* AutocompletionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutocompletionTableView.m; sourceTree = "<group>"; };
 		841F61391835CCFB00F799EF /* taobaodemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taobaodemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841F613C1835CCFB00F799EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		841F613E1835CCFB00F799EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +102,63 @@
 		841F61631835CCFB00F799EF /* taobaodemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taobaodemoTests-Info.plist"; sourceTree = "<group>"; };
 		841F61651835CCFB00F799EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		841F61671835CCFB00F799EF /* taobaodemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taobaodemoTests.m; sourceTree = "<group>"; };
+		841F61BE1835F0BB00F799EF /* TBsearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBsearchCell.h; sourceTree = "<group>"; };
+		841F61BF1835F0BB00F799EF /* TBsearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBsearchCell.m; sourceTree = "<group>"; };
+		841F61C21836095A00F799EF /* UIColor+Taobao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Taobao.h"; sourceTree = "<group>"; };
+		841F61C31836095A00F799EF /* UIColor+Taobao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Taobao.m"; sourceTree = "<group>"; };
+		841F61C41836095A00F799EF /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		841F61C918360C3F00F799EF /* DIN-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN-Bold.otf"; sourceTree = "<group>"; };
+		841F61CA18360C3F00F799EF /* DIN-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN-Medium.otf"; sourceTree = "<group>"; };
+		841F61CB18360C3F00F799EF /* DIN-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN-Regular.otf"; sourceTree = "<group>"; };
+		841F61D218360E9000F799EF /* TBFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFont.h; sourceTree = "<group>"; };
+		841F61D318360E9000F799EF /* TBFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFont.m; sourceTree = "<group>"; };
+		841F61DA18364E6100F799EF /* GBK.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GBK.ttf; sourceTree = "<group>"; };
+		8425F7EB18408B8200650C7E /* TBbuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBbuyViewController.h; sourceTree = "<group>"; };
+		8425F7EC18408B8200650C7E /* TBbuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBbuyViewController.m; sourceTree = "<group>"; };
+		8425F7EE1840B37500650C7E /* TBbuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBbuyCell.h; sourceTree = "<group>"; };
+		8425F7EF1840B37500650C7E /* TBbuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBbuyCell.m; sourceTree = "<group>"; };
+		843931D7183C6DC8006D5E72 /* IntroControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroControll.h; sourceTree = "<group>"; };
+		843931D8183C6DC8006D5E72 /* IntroControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroControll.m; sourceTree = "<group>"; };
+		843931D9183C6DC8006D5E72 /* IntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroModel.h; sourceTree = "<group>"; };
+		843931DA183C6DC8006D5E72 /* IntroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroModel.m; sourceTree = "<group>"; };
+		843931DB183C6DC8006D5E72 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
+		843931DC183C6DC8006D5E72 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
+		84424FF0183B070E00C925D6 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
+		84424FF1183B070E00C925D6 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
+		84424FF3183B172400C925D6 /* TBsearchSmallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBsearchSmallCell.h; sourceTree = "<group>"; };
+		84424FF4183B172400C925D6 /* TBsearchSmallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBsearchSmallCell.m; sourceTree = "<group>"; };
+		845C452D183F0B8100D278F5 /* TBShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBShopViewController.h; sourceTree = "<group>"; };
+		845C452E183F0B8100D278F5 /* TBShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBShopViewController.m; sourceTree = "<group>"; };
+		845C4530183F296F00D278F5 /* TBshopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBshopCell.h; sourceTree = "<group>"; };
+		845C4531183F296F00D278F5 /* TBshopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBshopCell.m; sourceTree = "<group>"; };
+		845C4533183F3B2D00D278F5 /* TBshopTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBshopTopCell.h; sourceTree = "<group>"; };
+		845C4534183F3B2D00D278F5 /* TBshopTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBshopTopCell.m; sourceTree = "<group>"; };
+		845C4536183F3B4700D278F5 /* TBshopBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBshopBottomCell.h; sourceTree = "<group>"; };
+		845C4537183F3B4700D278F5 /* TBshopBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBshopBottomCell.m; sourceTree = "<group>"; };
+		845C4539183F3F7400D278F5 /* StrikeThroughLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrikeThroughLabel.h; sourceTree = "<group>"; };
+		845C453A183F3F7400D278F5 /* StrikeThroughLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrikeThroughLabel.m; sourceTree = "<group>"; };
+		84801B441843223D002E30DC /* TBbuyTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBbuyTitleCell.h; sourceTree = "<group>"; };
+		84801B451843223D002E30DC /* TBbuyTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBbuyTitleCell.m; sourceTree = "<group>"; };
+		84801B4718433B83002E30DC /* TBbuyElseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBbuyElseCell.h; sourceTree = "<group>"; };
+		84801B4818433B83002E30DC /* TBbuyElseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBbuyElseCell.m; sourceTree = "<group>"; };
+		84801B4A18433E5C002E30DC /* TBmailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBmailCell.h; sourceTree = "<group>"; };
+		84801B4B18433E5C002E30DC /* TBmailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBmailCell.m; sourceTree = "<group>"; };
+		8488D61E183DADE2007254F1 /* TBrecomendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBrecomendCell.h; sourceTree = "<group>"; };
+		8488D61F183DADE2007254F1 /* TBrecomendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBrecomendCell.m; sourceTree = "<group>"; };
+		84A012F2183B365B00E4A4F6 /* NSObject+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ABExtras.h"; sourceTree = "<group>"; };
+		84A012F3183B365B00E4A4F6 /* NSObject+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ABExtras.m"; sourceTree = "<group>"; };
+		84A012F4183B365B00E4A4F6 /* UIImageView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ABExtras.h"; sourceTree = "<group>"; };
+		84A012F5183B365B00E4A4F6 /* UIImageView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ABExtras.m"; sourceTree = "<group>"; };
+		84A012F6183B365B00E4A4F6 /* UINavigationController+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ABExtras.h"; sourceTree = "<group>"; };
+		84A012F7183B365B00E4A4F6 /* UINavigationController+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ABExtras.m"; sourceTree = "<group>"; };
+		84A012F8183B365B00E4A4F6 /* UIView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ABExtras.h"; sourceTree = "<group>"; };
+		84A012F9183B365B00E4A4F6 /* UIView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ABExtras.m"; sourceTree = "<group>"; };
+		84A012FF183B367000E4A4F6 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
+		84A01300183B367000E4A4F6 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
+		84A01303183B368300E4A4F6 /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
+		84A01304183B368300E4A4F6 /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
+		84A0131B183B84F300E4A4F6 /* TBdetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBdetailViewController.h; sourceTree = "<group>"; };
+		84A0131C183B84F300E4A4F6 /* TBdetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBdetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +185,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841EB0051839E1C800164963 /* TSPopover */ = {
+			isa = PBXGroup;
+			children = (
+				841EB0091839ED9700164963 /* UIBarButtonItem+WEPopover.h */,
+				841EB00A1839ED9700164963 /* UIBarButtonItem+WEPopover.m */,
+				841EB00B1839ED9700164963 /* TSPopoverController.h */,
+				841EB00C1839ED9700164963 /* TSPopoverController.m */,
+				841EB00D1839ED9700164963 /* TSPopoverTouchView.h */,
+				841EB00E1839ED9700164963 /* TSPopoverTouchView.m */,
+				841EB00F1839ED9700164963 /* TSPopoverTouchesDelegate.h */,
+				841EB0101839ED9700164963 /* TSPopoverPopoverView.h */,
+				841EB0111839ED9700164963 /* TSPopoverPopoverView.m */,
+				841EB0121839ED9700164963 /* TSActionSheet.h */,
+				841EB0131839ED9700164963 /* TSActionSheet.m */,
+			);
+			name = TSPopover;
+			sourceTree = "<group>";
+		};
 		841F61301835CCFB00F799EF = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +236,46 @@
 		841F61421835CCFB00F799EF /* taobaodemo */ = {
 			isa = PBXGroup;
 			children = (
+				843931D6183C6DBF006D5E72 /* IntroControll */,
+				84A012F0183B364100E4A4F6 /* CustomUINavigationController */,
+				84424FEF183B070600C925D6 /* CWPopup */,
+				841EB01B183A300200164963 /* AutocompletionTableView.h */,
+				841EB01C183A300200164963 /* AutocompletionTableView.m */,
+				841EB0051839E1C800164963 /* TSPopover */,
+				841F61D018360C4800F799EF /* 字体颜色 */,
 				841F614B1835CCFB00F799EF /* TBAppDelegate.h */,
 				841F614C1835CCFB00F799EF /* TBAppDelegate.m */,
 				841F614E1835CCFB00F799EF /* Main.storyboard */,
 				841F61511835CCFB00F799EF /* TBViewController.h */,
 				841F61521835CCFB00F799EF /* TBViewController.m */,
+				84A0131B183B84F300E4A4F6 /* TBdetailViewController.h */,
+				84A0131C183B84F300E4A4F6 /* TBdetailViewController.m */,
 				841F61541835CCFB00F799EF /* Images.xcassets */,
+				841F61BE1835F0BB00F799EF /* TBsearchCell.h */,
+				841F61BF1835F0BB00F799EF /* TBsearchCell.m */,
 				841F61431835CCFB00F799EF /* Supporting Files */,
+				84424FF3183B172400C925D6 /* TBsearchSmallCell.h */,
+				84424FF4183B172400C925D6 /* TBsearchSmallCell.m */,
+				8488D61E183DADE2007254F1 /* TBrecomendCell.h */,
+				8488D61F183DADE2007254F1 /* TBrecomendCell.m */,
+				845C452D183F0B8100D278F5 /* TBShopViewController.h */,
+				845C452E183F0B8100D278F5 /* TBShopViewController.m */,
+				845C4530183F296F00D278F5 /* TBshopCell.h */,
+				845C4531183F296F00D278F5 /* TBshopCell.m */,
+				845C4533183F3B2D00D278F5 /* TBshopTopCell.h */,
+				845C4534183F3B2D00D278F5 /* TBshopTopCell.m */,
+				845C4536183F3B4700D278F5 /* TBshopBottomCell.h */,
+				845C4537183F3B4700D278F5 /* TBshopBottomCell.m */,
+				8425F7EB18408B8200650C7E /* TBbuyViewController.h */,
+				8425F7EC18408B8200650C7E /* TBbuyViewController.m */,
+				8425F7EE1840B37500650C7E /* TBbuyCell.h */,
+				8425F7EF1840B37500650C7E /* TBbuyCell.m */,
+				84801B441843223D002E30DC /* TBbuyTitleCell.h */,
+				84801B451843223D002E30DC /* TBbuyTitleCell.m */,
+				84801B4718433B83002E30DC /* TBbuyElseCell.h */,
+				84801B4818433B83002E30DC /* TBbuyElseCell.m */,
+				84801B4A18433E5C002E30DC /* TBmailCell.h */,
+				84801B4B18433E5C002E30DC /* TBmailCell.m */,
 			);
 			path = taobaodemo;
 			sourceTree = "<group>";
@@ -150,6 +307,89 @@
 				841F61641835CCFB00F799EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		841F61D018360C4800F799EF /* 字体颜色 */ = {
+			isa = PBXGroup;
+			children = (
+				845C4539183F3F7400D278F5 /* StrikeThroughLabel.h */,
+				845C453A183F3F7400D278F5 /* StrikeThroughLabel.m */,
+				841F61DA18364E6100F799EF /* GBK.ttf */,
+				841F61D218360E9000F799EF /* TBFont.h */,
+				841F61D318360E9000F799EF /* TBFont.m */,
+				841F61C21836095A00F799EF /* UIColor+Taobao.h */,
+				841F61C31836095A00F799EF /* UIColor+Taobao.m */,
+				841F61C41836095A00F799EF /* CommonUtility.h */,
+				841F61C918360C3F00F799EF /* DIN-Bold.otf */,
+				841F61CA18360C3F00F799EF /* DIN-Medium.otf */,
+				841F61CB18360C3F00F799EF /* DIN-Regular.otf */,
+			);
+			name = "字体颜色";
+			sourceTree = "<group>";
+		};
+		843931D6183C6DBF006D5E72 /* IntroControll */ = {
+			isa = PBXGroup;
+			children = (
+				843931D7183C6DC8006D5E72 /* IntroControll.h */,
+				843931D8183C6DC8006D5E72 /* IntroControll.m */,
+				843931D9183C6DC8006D5E72 /* IntroModel.h */,
+				843931DA183C6DC8006D5E72 /* IntroModel.m */,
+				843931DB183C6DC8006D5E72 /* IntroView.h */,
+				843931DC183C6DC8006D5E72 /* IntroView.m */,
+			);
+			name = IntroControll;
+			sourceTree = "<group>";
+		};
+		84424FEF183B070600C925D6 /* CWPopup */ = {
+			isa = PBXGroup;
+			children = (
+				84424FF0183B070E00C925D6 /* UIViewController+CWPopup.h */,
+				84424FF1183B070E00C925D6 /* UIViewController+CWPopup.m */,
+			);
+			name = CWPopup;
+			sourceTree = "<group>";
+		};
+		84A012F0183B364100E4A4F6 /* CustomUINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				84A01302183B367900E4A4F6 /* SquaresFlipNavigation */,
+				84A012FE183B366400E4A4F6 /* CubeNavigation */,
+				84A012F1183B364C00E4A4F6 /* Categories */,
+			);
+			name = CustomUINavigationController;
+			sourceTree = "<group>";
+		};
+		84A012F1183B364C00E4A4F6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				84A012F2183B365B00E4A4F6 /* NSObject+ABExtras.h */,
+				84A012F3183B365B00E4A4F6 /* NSObject+ABExtras.m */,
+				84A012F4183B365B00E4A4F6 /* UIImageView+ABExtras.h */,
+				84A012F5183B365B00E4A4F6 /* UIImageView+ABExtras.m */,
+				84A012F6183B365B00E4A4F6 /* UINavigationController+ABExtras.h */,
+				84A012F7183B365B00E4A4F6 /* UINavigationController+ABExtras.m */,
+				84A012F8183B365B00E4A4F6 /* UIView+ABExtras.h */,
+				84A012F9183B365B00E4A4F6 /* UIView+ABExtras.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		84A012FE183B366400E4A4F6 /* CubeNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				84A012FF183B367000E4A4F6 /* CubeNavigationController.h */,
+				84A01300183B367000E4A4F6 /* CubeNavigationController.m */,
+			);
+			name = CubeNavigation;
+			sourceTree = "<group>";
+		};
+		84A01302183B367900E4A4F6 /* SquaresFlipNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				84A01303183B368300E4A4F6 /* FlipSquaresNavigationController.h */,
+				84A01304183B368300E4A4F6 /* FlipSquaresNavigationController.m */,
+			);
+			name = SquaresFlipNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +471,11 @@
 			files = (
 				841F61551835CCFB00F799EF /* Images.xcassets in Resources */,
 				841F61471835CCFB00F799EF /* InfoPlist.strings in Resources */,
+				841F61CD18360C3F00F799EF /* DIN-Bold.otf in Resources */,
+				841F61CE18360C3F00F799EF /* DIN-Medium.otf in Resources */,
 				841F61501835CCFB00F799EF /* Main.storyboard in Resources */,
+				841F61CF18360C3F00F799EF /* DIN-Regular.otf in Resources */,
+				841F61DB18364E6100F799EF /* GBK.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +494,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841EB0171839ED9700164963 /* TSPopoverPopoverView.m in Sources */,
+				845C4532183F296F00D278F5 /* TBshopCell.m in Sources */,
+				84424FF5183B172400C925D6 /* TBsearchSmallCell.m in Sources */,
+				84801B4918433B83002E30DC /* TBbuyElseCell.m in Sources */,
 				841F61531835CCFB00F799EF /* TBViewController.m in Sources */,
+				84A01305183B368300E4A4F6 /* FlipSquaresNavigationController.m in Sources */,
+				84A012FC183B365B00E4A4F6 /* UINavigationController+ABExtras.m in Sources */,
+				843931DF183C6DC8006D5E72 /* IntroView.m in Sources */,
+				845C452F183F0B8100D278F5 /* TBShopViewController.m in Sources */,
 				841F614D1835CCFB00F799EF /* TBAppDelegate.m in Sources */,
+				84424FF2183B070E00C925D6 /* UIViewController+CWPopup.m in Sources */,
+				84A012FD183B365B00E4A4F6 /* UIView+ABExtras.m in Sources */,
+				8425F7ED18408B8200650C7E /* TBbuyViewController.m in Sources */,
+				84801B461843223D002E30DC /* TBbuyTitleCell.m in Sources */,
+				8425F7F01840B37500650C7E /* TBbuyCell.m in Sources */,
+				841EB0181839ED9700164963 /* TSActionSheet.m in Sources */,
+				843931DE183C6DC8006D5E72 /* IntroModel.m in Sources */,
+				841EB0151839ED9700164963 /* TSPopoverController.m in Sources */,
+				84A012FB183B365B00E4A4F6 /* UIImageView+ABExtras.m in Sources */,
+				841F61C51836095A00F799EF /* UIColor+Taobao.m in Sources */,
+				8488D620183DADE2007254F1 /* TBrecomendCell.m in Sources */,
+				841F61C01835F0BB00F799EF /* TBsearchCell.m in Sources */,
 				841F61491835CCFB00F799EF /* main.m in Sources */,
+				84A012FA183B365B00E4A4F6 /* NSObject+ABExtras.m in Sources */,
+				843931DD183C6DC8006D5E72 /* IntroControll.m in Sources */,
+				841EB0161839ED9700164963 /* TSPopoverTouchView.m in Sources */,
+				84A01301183B367000E4A4F6 /* CubeNavigationController.m in Sources */,
+				84801B4C18433E5C002E30DC /* TBmailCell.m in Sources */,
+				841EB0141839ED9700164963 /* UIBarButtonItem+WEPopover.m in Sources */,
+				845C453B183F3F7400D278F5 /* StrikeThroughLabel.m in Sources */,
+				845C4538183F3B4700D278F5 /* TBshopBottomCell.m in Sources */,
+				841F61D418360E9000F799EF /* TBFont.m in Sources */,
+				845C4535183F3B2D00D278F5 /* TBshopTopCell.m in Sources */,
+				84A0131D183B84F300E4A4F6 /* TBdetailViewController.m in Sources */,
+				841EB01D183A300200164963 /* AutocompletionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +595,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yuan wang (8836GPYY3L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yuan wang (8836GPYY3L)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -335,9 +612,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos7.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -359,7 +636,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yuan wang (8836GPYY3L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yuan wang (8836GPYY3L)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -369,8 +647,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos7.0;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -381,10 +659,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yuan wang (8836GPYY3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taobaodemo/taobaodemo-Prefix.pch";
 				INFOPLIST_FILE = "taobaodemo/taobaodemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,10 +675,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yuan wang (8836GPYY3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taobaodemo/taobaodemo-Prefix.pch";
 				INFOPLIST_FILE = "taobaodemo/taobaodemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -463,6 +747,7 @@
 				841F616D1835CCFB00F799EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		841F616E1835CCFB00F799EF /* Build configuration list for PBXNativeTarget "taobaodemoTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +756,7 @@
 				841F61701835CCFB00F799EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

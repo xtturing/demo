@@ -201,6 +201,7 @@
     isHistory=YES;
     self.textField = textField;
     [self showOptionsView];
+    [self resignFirstResponder];
     [self reloadData];
 }
 - (void)textFieldValueChanged:(UITextField *)textField

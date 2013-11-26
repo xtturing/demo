@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBbuyElseCell : UITableViewCell
+@interface TBbuyElseCell : UITableViewCell{
+    IBOutlet UILabel *titleLab;
+    IBOutlet UILabel *detailLab;
+    IBOutlet UIView *line;
+}
+@property (nonatomic ,copy) NSString *titleText;
+@property (nonatomic ,copy) NSString *detailtext;
 
 @end

@@ -33,6 +33,11 @@
 @synthesize blackView;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     isPrice=YES;
     isSearchType=YES;
     self.view.backgroundColor=[UIColor colorFromRGB:0xf4f4f4];
@@ -121,17 +126,17 @@
     menuView=[[UIView alloc ] initWithFrame:CGRectMake(588, 0, 436, 768)];
     menuView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"更多-2"]];
     [self tapMenuBackground];
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:self action:@selector(menuAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(0, 40,80, 60)];
+    [btn setBackgroundColor:[UIColor clearColor]];
+    [menuView addSubview:btn];
     menuView.hidden=YES;
     [self.view addSubview:menuView];
     
     [searchField addTarget:self.autoCompleter action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventTouchDown];
     [searchField addTarget:self.autoCompleter action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self tapBuyBackground];
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -147,14 +152,12 @@
 {
     buyView.hidden=YES;
     blackView.hidden=YES;
-    blackView.frame=CGRectMake(0,151, 1024, 617);
     [blackView removeGestureRecognizer:recognizer];
 }
 -(void)tapBuyRight:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
     buyView.hidden=YES;
     blackView.hidden=YES;
-    blackView.frame=CGRectMake(0,151, 1024, 617);
 }
 
 -(void)typeAction:(id)sender{
@@ -201,12 +204,12 @@
 {
     menuView.hidden=YES;
     blackView.hidden=YES;
-    blackView.frame=CGRectMake(0,151, 1024, 617);
     [blackView removeGestureRecognizer:recognizer];
 }
 -(void)tapOnce:(UITapGestureRecognizer*)recognizer//手势方法
 {
     allTypeView.hidden=YES;
+    blackView.frame=CGRectMake(0,0, 1024, 768);
     blackView.hidden=YES;
     [blackView removeGestureRecognizer:recognizer];
     [listView setFrame:CGRectMake(16, 151, 992, 617)];
@@ -226,13 +229,17 @@
 {
     allTypeView.hidden=YES;
     blackView.hidden=YES;
+    blackView.frame=CGRectMake(0,0, 1024, 768);
     [listView setFrame:CGRectMake(16, 151, 992, 617)];
     [smallListView setFrame:CGRectMake(22, 151, 980, 617)];
 }
 -(void)tapRight:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
     menuView.hidden=YES;
-    blackView.frame=CGRectMake(0,151, 1024, 617);
+    blackView.hidden=YES;
+}
+-(void)menuAction:(id)sender{
+    menuView.hidden=YES;
     blackView.hidden=YES;
 }
 -(void)btnAction:(id)sender {
@@ -339,7 +346,7 @@
                                         inView:typeView
                        permittedArrowDirections:UIPopoverArrowDirectionUp
                     animated:NO];
-    popover.backgroundColor=[UIColor whiteColor];
+//    popover.backgroundColor=[UIColor whiteColor];
 }
 - (void)popoverControllerDidDismissPopover:(UIPopoverController*)popoverController{
     if (popover) {
@@ -374,15 +381,57 @@
 }
 
 -(IBAction)searchType:(id)sender{
-    UIButton *btn = (UIButton *)sender;
-    if(isSearchType){
-        [btn setImage:[UIImage imageNamed:@"选择店铺"] forState:UIControlStateNormal];
-        isSearchType=NO;
-    }else{
-        [btn setImage:[UIImage imageNamed:@"选择商品"] forState:UIControlStateNormal];
-        isSearchType=YES;
-    }
+    UIViewController *viewController=[[UIViewController alloc] init];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 121)];
     
+    [viewController setView:view];
+    btn1=[UIButton buttonWithType:UIButtonTypeSystem];
+    btn1.frame = CGRectMake(0, 0, 200, 60);
+    [btn1 setTitle:@"店铺" forState:UIControlStateNormal];
+    [btn1.titleLabel setFont:[TBFont fzltFontOfSize:18]];
+    
+    [btn1 addTarget:self action:@selector(searchtypeChange:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn1];
+    
+    [view addSubview:[self draw:CGRectMake(0, 60, 200, 1)]];
+    
+    
+    btn2=[UIButton buttonWithType:UIButtonTypeSystem];
+    btn2.frame =CGRectMake(0, 61, 200, 60);
+    [btn2 setTitle:@"商品" forState:UIControlStateNormal];
+    [btn2.titleLabel setFont:[TBFont fzltFontOfSize:18]];
+   
+    [btn2 addTarget:self action:@selector(searchtypeChange:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn2];
+    if(isSearchType){
+        [btn2 setTintColor:[UIColor colorFromRGB:0xff5500]];
+        [btn1 setTintColor:[UIColor colorFromRGB:0x444444]];
+    }else{
+        [btn1 setTintColor:[UIColor colorFromRGB:0xff5500]];
+        [btn2 setTintColor:[UIColor colorFromRGB:0x444444]];
+    }
+    popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    [popover setPopoverContentSize:CGSizeMake(200,121)];
+    [popover presentPopoverFromRect:((UIButton *)sender).frame
+                             inView:searchView
+           permittedArrowDirections:UIPopoverArrowDirectionUp
+                           animated:NO];
+//    popover.backgroundColor=[UIColor whiteColor];
+    
+}
+-(void)searchtypeChange:(id)sender{
+    if(isSearchType){
+        [menu7 setImage:[UIImage imageNamed:@"选择店铺"] forState:UIControlStateNormal];
+        isSearchType=NO;
+        [btn2 setTintColor:[UIColor colorFromRGB:0xff5500]];
+        [btn1 setTintColor:[UIColor colorFromRGB:0x444444]];
+    }else{
+        [menu7 setImage:[UIImage imageNamed:@"选择商品"] forState:UIControlStateNormal];
+        isSearchType=YES;
+        [btn1 setTintColor:[UIColor colorFromRGB:0xff5500]];
+        [btn2 setTintColor:[UIColor colorFromRGB:0x444444]];
+    }
+    [self popoverControllerDidDismissPopover:popover];
 }
 -(IBAction)menuButtonAction:(id)sender{
     UIButton *btn = (UIButton *)sender;
@@ -452,7 +501,6 @@
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
     buyView.hidden=NO;
-    blackView.frame=CGRectMake(0, 0, 424, 768);
     blackView.hidden=NO;
 }
 -(void)historyAction:(id)sender{
@@ -493,12 +541,12 @@
     if(collectionView.tag==1001){
         TBsearchSmallCell *cell = (TBsearchSmallCell*) [collectionView dequeueReusableCellWithReuseIdentifier:@"TBsearchSmallCellIdentifier"
                                                                                        forIndexPath:indexPath];
-        [cell setImageText:[NSString stringWithFormat:@"%d",(indexPath.row%7+1)]];
+        [cell setImageText:[NSString stringWithFormat:@"%d",(int)(indexPath.row%7+1)]];
         return cell;
     }else{
         TBsearchCell *cell = (TBsearchCell*) [collectionView dequeueReusableCellWithReuseIdentifier:@"TBsearchCellIdentifier"
                                                                                        forIndexPath:indexPath];
-        [cell setImageText:[NSString stringWithFormat:@"%d",(indexPath.row%7+1)]];
+        [cell setImageText:[NSString stringWithFormat:@"%d",(int)(indexPath.row%7+1)]];
         return cell;
     }
     

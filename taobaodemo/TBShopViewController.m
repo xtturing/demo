@@ -11,8 +11,14 @@
 #import "TBFont.h"
 #import "TSPopoverController.h"
 #import "TBshopCell.h"
+#import "TBshopBottomCell.h"
+#import "TBshopTopCell.h"
 #import <QuartzCore/QuartzCore.h>
-@interface TBShopViewController ()
+#import "TBbuyViewController.h"
+#import "TBdetailViewController.h"
+@interface TBShopViewController (){
+    
+}
 
 @end
 
@@ -27,7 +33,7 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    self.view.backgroundColor=[UIColor colorFromRGB:0xf4f4f4];
+    self.view.backgroundColor=[UIColor clearColor];
     topView.backgroundColor=[UIColor colorFromRGB:0xf4f4f4];
     CALayer *layer=[topView layer];
     [layer setBorderWidth:1.0];
@@ -53,7 +59,7 @@
     titlebtn.titleLabel.font=[TBFont fzltFontOfSize:18];
     [titlebtn setTintColor:[UIColor colorFromRGB:0x444444]];
     
-    buyBtn.titleLabel.font=[TBFont fzltFontOfSize:18];
+//    buyBtn.titleLabel.font=[TBFont fzltFontOfSize:18];
     [buyBtn.titleLabel setFont:[TBFont fzltFontOfSize:18]];
     
      numLab.font=[TBFont fzltFontOfSize:18];
@@ -80,19 +86,19 @@
     if(indexPath.row==0)
     {
         static NSString *topRowIdentifier = @"topRowIdentifier";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:topRowIdentifier];
+        TBshopTopCell *cell = [tableView dequeueReusableCellWithIdentifier:topRowIdentifier];
         if (cell == nil)
         {
-            cell = [[UITableViewCell alloc]
+            cell = [[TBshopTopCell alloc]
                     initWithStyle:UITableViewCellStyleDefault reuseIdentifier:topRowIdentifier];
         }
         return cell;
     }else if (indexPath.row==3){
         static NSString *bottomRowIdentifier = @"bottomRowIdentifier";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bottomRowIdentifier];
+        TBshopBottomCell *cell = [tableView dequeueReusableCellWithIdentifier:bottomRowIdentifier];
         if (cell == nil)
         {
-            cell = [[UITableViewCell alloc]
+            cell = [[TBshopBottomCell alloc]
                     initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bottomRowIdentifier];
         }
         return cell;
@@ -102,7 +108,7 @@
         if (cell == nil) {
             cell = [[TBshopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableSampleIdentifier];
         }
-        cell.imageText=[NSString stringWithFormat:@"%d",indexPath.row];
+        cell.imageText=[NSString stringWithFormat:@"%d",(int)indexPath.row];
         return cell;
     }
     
@@ -133,12 +139,26 @@
     return 0;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if(indexPath.row==0)
+    {
+    }else if (indexPath.row==3){
+        
+    }else{
+        TBdetailViewController *view=[self.storyboard instantiateViewControllerWithIdentifier:@"detailViewController"];
+        [self.navigationController pushViewController:view animated:YES];
+    }
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"buyView"])
+    {
+        
+    }
+}
 @end

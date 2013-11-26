@@ -14,6 +14,7 @@
 @interface TBdetailViewController (){
     UIPopoverController *popover;
     UIView *menuView;
+    UIView *wangwang;
 }
 
 @end
@@ -179,6 +180,11 @@
     
     menuView=[[UIView alloc ] initWithFrame:CGRectMake(588, 0, 436, 768)];
     menuView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"更多-2"]];
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:self action:@selector(menuAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(0, 40,80, 60)];
+    [btn setBackgroundColor:[UIColor clearColor]];
+    [menuView addSubview:btn];
     [self tapMenuBackground];
     menuView.hidden=YES;
     [self.view addSubview:menuView];
@@ -191,6 +197,23 @@
     downRecognizer.direction=UISwipeGestureRecognizerDirectionRight;
     [buyView addGestureRecognizer:downRecognizer];
     
+    
+}
+-(void)tapWangOnce:(UITapGestureRecognizer*)recognizer//手势方法
+{
+    wangwang.hidden=YES;
+    blackView.hidden=YES;
+    blackView.frame=CGRectMake(0,0, 1024, 768);
+    [blackView removeGestureRecognizer:recognizer];
+    [field resignFirstResponder];
+}
+-(void)wangCloseAction:(id)sender{
+    wangwang.hidden=YES;
+    blackView.hidden=YES;
+    blackView.frame=CGRectMake(0,0, 1024, 768);
+    [field resignFirstResponder];
+}
+-(void)wangShopAction:(id)sender{
     
 }
 -(void)tapBuyOnce:(UITapGestureRecognizer*)recognizer//手势方法
@@ -223,6 +246,10 @@
 }
 -(void)tapRight:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
+    menuView.hidden=YES;
+    blackView.hidden=YES;
+}
+-(void)menuAction:(id)sender{
     menuView.hidden=YES;
     blackView.hidden=YES;
 }
@@ -283,11 +310,72 @@
             [self moreOther:sender];
             break;
         }
+        case 2002:{
+            [self wangwang:sender];
+            break;
+        }
         default:
             break;
     }
 
 }
+
+
+-(void)wangwang:(id)sender{
+    blackView.hidden=NO;
+    if(wangwang){
+        wangwang.hidden=NO;
+        wangwang.frame=CGRectMake(177, 10, 670, 748);
+        bottom.frame=CGRectMake(0, wangwang.frame.size.height-61, 670, 61);
+    }else{
+        wangwang=[[UIView alloc] initWithFrame:CGRectMake(177, 10, 670, 748)];
+        wangwang.backgroundColor=[UIColor whiteColor];
+        CALayer *layer=[wangwang layer];
+        [layer setBorderWidth:1.0];
+        [layer setBorderColor:[[UIColor colorFromRGB:0xededed] CGColor]];
+        [layer setCornerRadius:4.0];
+        
+        UIView *top=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 670, 281)];
+        [top setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"旺旺top"]]];
+        [wangwang addSubview:top];
+        
+        
+        bottom=[[UIView alloc] initWithFrame:CGRectMake(0, wangwang.frame.size.height-61, 670, 61)];
+        [bottom setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"旺旺bottom"]]];
+        
+        
+        [wangwang addSubview:bottom];
+        
+        
+        UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+        [btn addTarget:self action:@selector(wangCloseAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setFrame:CGRectMake(0, 0,60, 60)];
+        [btn setBackgroundColor:[UIColor clearColor]];
+        [top addSubview:btn];
+        
+        UIButton *btn1=[UIButton buttonWithType:UIButtonTypeCustom];
+        [btn1 addTarget:self action:@selector(wangShopAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn1 setFrame:CGRectMake(610,0,60, 60)];
+        [btn1 setBackgroundColor:[UIColor clearColor]];
+        [top addSubview:btn1];
+        
+        field=[[UITextField alloc] initWithFrame:CGRectMake(70,10,465, 43)];
+        [field setBorderStyle:UITextBorderStyleNone];
+        field.clearButtonMode=UITextFieldViewModeWhileEditing;
+        field.delegate=self;
+        field.keyboardType=UIKeyboardTypeDefault;
+        field.userInteractionEnabled=YES;
+        field.returnKeyType=UIReturnKeyDone;
+        [bottom addSubview:field];
+        
+        
+        [self.view addSubview:wangwang];
+    }
+    UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWangOnce:)];//定义一个手势
+    [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
+    [blackView addGestureRecognizer:blacktap];//添加手势到View中
+}
+
 -(void)homeAction:(id)sender{
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMenuOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
@@ -342,7 +430,7 @@
                              inView:sizView
            permittedArrowDirections:UIPopoverArrowDirectionRight
                            animated:NO];
-    popover.backgroundColor=[UIColor whiteColor];
+//    popover.backgroundColor=[UIColor whiteColor];
 }
 - (void)popoverControllerDidDismissPopover:(UIPopoverController*)popoverController{
     if (popover) {
@@ -426,13 +514,30 @@
     
         TBrecomendCell *cell = (TBrecomendCell *) [collectionView dequeueReusableCellWithReuseIdentifier:@"TBrecomendCellIdentifier"
                                                                                        forIndexPath:indexPath];
-        [cell setImageText:[NSString stringWithFormat:@"%d",(indexPath.row%7+1)]];
+        [cell setImageText:[NSString stringWithFormat:@"%d",(int)(indexPath.row%7+1)]];
         return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    TBdetailViewController *view=[self.storyboard instantiateViewControllerWithIdentifier:@"detailViewController"];
+    [self.navigationController pushViewController:view animated:YES];
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [self resignFirstResponder];
+    wangwang.frame=CGRectMake(177, 10, 670, 406);
+    bottom.frame=CGRectMake(0, wangwang.frame.size.height-61, 670, 61);
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    wangwang.frame=CGRectMake(177, 10, 670, 748);
+    bottom.frame=CGRectMake(0, wangwang.frame.size.height-61, 670, 61);
+    return YES;
+}
 @end

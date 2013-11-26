@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StrikeThroughLabel.h"
-@interface TBshopCell : UITableViewCell{
+@interface TBshopCell : UITableViewCell<UIPopoverControllerDelegate>{
     IBOutlet UIButton *check;
     IBOutlet UIView *imgView;
     IBOutlet UILabel *titleLab;
@@ -19,6 +19,8 @@
     IBOutlet UILabel *plab3;
     IBOutlet UIView *line3;
     Boolean isCheck;
+    UIPopoverController *popover;
 }
 @property(nonatomic,copy) NSString *imageText;
+-(IBAction)moreOther:(id)sender;
 @end

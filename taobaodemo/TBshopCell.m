@@ -66,4 +66,25 @@
     [layer1 setBorderColor:[[UIColor colorFromRGB:0xffffff] CGColor]];
     [imgView addSubview:imageView];
 }
+-(IBAction)moreOther:(id)sender{
+    UIViewController *viewController=[[UIViewController alloc] init];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
+    view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];    
+    
+    [viewController setView:view];
+    popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    [popover setPopoverContentSize:CGSizeMake(510,674)];
+    [popover presentPopoverFromRect:((UIButton *)sender).frame
+                             inView:self
+           permittedArrowDirections:UIPopoverArrowDirectionRight
+                           animated:NO];
+//    popover.backgroundColor=[UIColor whiteColor];
+}
+- (void)popoverControllerDidDismissPopover:(UIPopoverController*)popoverController{
+    if (popover) {
+        [popover dismissPopoverAnimated:YES];
+        popover=nil;
+    }
+}
+
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "IntroControll.h"
-@interface TBdetailViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIScrollViewDelegate,UIPopoverControllerDelegate>{
+@interface TBdetailViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIScrollViewDelegate,UIPopoverControllerDelegate,UITextFieldDelegate>{
     IBOutlet UIScrollView *scrollview;
     IBOutlet UIView *toolBarView;
     IBOutlet UILabel *titleLab;
@@ -61,6 +61,8 @@
     
     IBOutlet UIView *blackView;
     IBOutlet UIView *buyView;
+    UIView *bottom;
+    UITextField *field;
 }
 -(IBAction)menuButtonAction:(id)sender;
 -(IBAction)otherAction:(id)sender;

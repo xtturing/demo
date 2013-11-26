@@ -7,7 +7,8 @@
 //
 
 #import "TBbuyElseCell.h"
-
+#import "UIColor+Taobao.h"
+#import "TBFont.h"
 @implementation TBbuyElseCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -26,4 +27,17 @@
     // Configure the view for the selected state
 }
 
+-(void)drawRect:(CGRect)rect{
+    titleLab.font=[TBFont fzltFontOfSize:14];
+    titleLab.textColor=[UIColor colorFromRGB:0x444444];
+    detailLab.font=[TBFont fzltFontOfSize:14];
+    detailLab.textColor=[UIColor colorFromRGB:0x444444];
+    line.backgroundColor=[UIColor colorFromRGB:0xeeeeee];
+}
+-(void)setTitleText:(NSString *)titleText{
+    titleLab.text=titleText;
+}
+-(void)setDetailtext:(NSString *)detailtext{
+    detailLab.text=detailtext;
+}
 @end
