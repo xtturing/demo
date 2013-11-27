@@ -71,6 +71,15 @@
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
     view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];    
     
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundImage:[UIImage imageNamed:@"结算"] forState:UIControlStateNormal];
+    [btn setTitle:@"确定" forState:UIControlStateNormal];
+    [btn setTintColor:[UIColor whiteColor]];
+    btn.titleLabel.font=[TBFont fzltFontOfSize:18];
+    [btn addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(190, 611, 130, 40)];
+    [view addSubview:btn];
+    
     [viewController setView:view];
     popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
     [popover setPopoverContentSize:CGSizeMake(510,674)];
@@ -86,5 +95,7 @@
         popover=nil;
     }
 }
-
+-(void)sureAction:(id)sender{
+    [self popoverControllerDidDismissPopover:popover];
+}
 @end

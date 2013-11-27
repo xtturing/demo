@@ -388,8 +388,8 @@
 -(void)loginAction:(id)sender{
     [self dismissView];
     UIViewController *viewController=[[UIViewController alloc] init];
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
-    view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 323, 601)];
+    view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"我的淘宝-1"]];
     
     //    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
     //    [btn setImage:[UIImage imageNamed:@"立即购买"] forState:UIControlStateNormal];
@@ -402,7 +402,7 @@
     
     [viewController setView:view];
     popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
-    [popover setPopoverContentSize:CGSizeMake(510,674)];
+    [popover setPopoverContentSize:CGSizeMake(323, 601)];
     [popover presentPopoverFromRect:((UIButton *)sender).frame
                              inView:toolBarView
            permittedArrowDirections:UIPopoverArrowDirectionUp

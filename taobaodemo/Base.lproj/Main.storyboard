@@ -390,14 +390,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <containerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMa-rF-yQY">
-                                <rect key="frame" x="424" y="0.0" width="600" height="768"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="EMA-DA-LQ8" kind="embed" id="RUe-Bc-rta"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -407,7 +399,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="blackView" destination="sFa-Mq-qgP" id="zJh-3h-I2q"/>
-                        <outlet property="buyView" destination="JMa-rF-yQY" id="TDc-Tu-rai"/>
                         <outlet property="img2" destination="p9c-pb-dqN" id="yP2-Sx-65f"/>
                         <outlet property="img3" destination="C1i-Xy-UqU" id="nPc-rV-2jq"/>
                         <outlet property="img4" destination="PNb-4R-z97" id="Bfz-Bh-Fm3"/>
@@ -942,14 +933,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <containerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujH-SQ-QMI">
-                                <rect key="frame" x="424" y="0.0" width="600" height="768"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="EMA-DA-LQ8" kind="embed" id="GZN-W8-C1Y"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -959,7 +942,6 @@
                         <outlet property="addressBtn" destination="k2A-ab-jju" id="hg3-f7-Ist"/>
                         <outlet property="addresslab" destination="ia8-jz-MwF" id="J7Q-NT-05N"/>
                         <outlet property="blackView" destination="g1E-5B-C5k" id="67x-YT-Obw"/>
-                        <outlet property="buyView" destination="ujH-SQ-QMI" id="oat-ak-NmR"/>
                         <outlet property="colorlab" destination="pRG-lN-rrO" id="Zv8-de-pLY"/>
                         <outlet property="commentlab" destination="pRw-nZ-vKq" id="euE-pV-oWh"/>
                         <outlet property="dView" destination="jZ9-xv-htq" id="hca-p3-FBJ"/>
@@ -1008,7 +990,7 @@
         <!--Shop View Controller-->
         <scene sceneID="gBn-JV-L4i">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="EMA-DA-LQ8" customClass="TBShopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TBShopViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EMA-DA-LQ8" customClass="TBShopViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdD-IX-Ybh"/>
                         <viewControllerLayoutGuide type="bottom" id="L2c-Ac-Gbx"/>
@@ -1133,6 +1115,18 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzi-rb-4Uw" userLabel="button">
+                                                    <rect key="frame" x="159" y="75" width="138" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="moreOther:" destination="XC5-QG-eET" eventType="touchUpInside" id="h0N-Cd-JNy"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1266,7 +1260,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Fno-Ma-0Ew" kind="push" identifier="buyView" id="8iM-16-cU6"/>
+                                            <action selector="buyAction:" destination="EMA-DA-LQ8" eventType="touchUpInside" id="pfg-qF-zcl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1277,6 +1271,8 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="allLab" destination="csF-ow-dfc" id="tai-hR-fea"/>
                         <outlet property="bottomView" destination="Mni-js-A2l" id="RUm-zs-ayX"/>
@@ -1293,22 +1289,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDS-5I-4ZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3498" y="1222"/>
+            <point key="canvasLocation" x="1826" y="858"/>
         </scene>
         <!--Bbuy View Controller-->
         <scene sceneID="aME-ow-EK8">
             <objects>
-                <viewController id="Fno-Ma-0Ew" customClass="TBbuyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TBbuyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fno-Ma-0Ew" customClass="TBbuyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2H-tW-iKe"/>
                         <viewControllerLayoutGuide type="bottom" id="1bH-Qi-Od3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xog-kX-hg7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ttx-5E-nAD">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="88"/>
+                                <rect key="frame" x="0.0" y="-3" width="1448" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXN-5z-a3V">
@@ -1604,7 +1600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu2-E5-BIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4569" y="1142"/>
+            <point key="canvasLocation" x="3161" y="858"/>
         </scene>
     </scenes>
     <resources>
@@ -1645,7 +1641,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RUe-Bc-rta"/>
-        <segue reference="d8a-AF-GBq"/>
+        <segue reference="bQv-Dw-6BY"/>
     </inferredMetricsTieBreakers>
 </document>
