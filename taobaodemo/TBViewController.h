@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface TBViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIPopoverControllerDelegate>{
     IBOutlet UIView *toolBarView;
     IBOutlet UIView *searchView;
@@ -45,11 +46,11 @@
     
     IBOutlet UITextField *searchField;
     
-    IBOutlet UIView *buyView;
+    UIView *buyView;
 }
 -(IBAction)searchType:(id)sender;
 -(IBAction)menuButtonAction:(id)sender;
-
+-(void)dismissView;
 @property(nonatomic,retain) UIView *blackView;
 
 @end

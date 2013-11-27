@@ -15,6 +15,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AutocompletionTableView.h"
 #import "TBdetailViewController.h"
+#import "TBShopViewController.h"
 @interface TBViewController (){
     Boolean isPrice;
     Boolean isSearchType;
@@ -136,7 +137,8 @@
     
     [searchField addTarget:self.autoCompleter action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventTouchDown];
     [searchField addTarget:self.autoCompleter action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
-    [self tapBuyBackground];
+   
+    
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -150,18 +152,18 @@
 }
 -(void)tapBuyOnce:(UITapGestureRecognizer*)recognizer//手势方法
 {
-    buyView.hidden=YES;
+    [buyView removeFromSuperview];
     blackView.hidden=YES;
     [blackView removeGestureRecognizer:recognizer];
 }
 -(void)tapBuyRight:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
-    buyView.hidden=YES;
+    [buyView removeFromSuperview];
     blackView.hidden=YES;
 }
 
 -(void)typeAction:(id)sender{
-    
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
@@ -217,6 +219,7 @@
 }
 -(void)tapDown:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
@@ -286,6 +289,7 @@
     [smallListView reloadData];
 }
 -(void)picAction:(id)sender  forEvent:(UIEvent*)senderEvent{
+    [self dismissView];
     UIViewController *viewController=[[UIViewController alloc] init];
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 182)];
     
@@ -381,6 +385,7 @@
 }
 
 -(IBAction)searchType:(id)sender{
+    [self dismissView];
     UIViewController *viewController=[[UIViewController alloc] init];
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 121)];
     
@@ -483,6 +488,7 @@
     }
 }
 -(void)homeAction:(id)sender{
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMenuOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
@@ -491,16 +497,42 @@
     blackView.hidden=NO;
 }
 -(void)loginAction:(id)sender{
+    [self dismissView];
+    UIViewController *viewController=[[UIViewController alloc] init];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
+    view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];
     
+//    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn setImage:[UIImage imageNamed:@"立即购买"] forState:UIControlStateNormal];
+//    [btn setImage:[UIImage imageNamed:@"立即购买点击"] forState:UIControlStateHighlighted];
+//    [btn addTarget:self action:@selector(shopAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setFrame:CGRectMake(87, 611, 130, 40)];
+//    [view addSubview:btn];
+    
+    
+    
+    [viewController setView:view];
+    popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    [popover setPopoverContentSize:CGSizeMake(510,674)];
+    [popover presentPopoverFromRect:((UIButton *)sender).frame
+                             inView:toolBarView
+           permittedArrowDirections:UIPopoverArrowDirectionUp
+                           animated:NO];
 }
 -(void)messageAction:(id)sender{
     
 }
 -(void)shopAction:(id)sender{
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBuyOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
-    buyView.hidden=NO;
+    TBShopViewController *shop= [self.storyboard instantiateViewControllerWithIdentifier:@"TBShopViewController"];
+    buyView=shop.view;
+    buyView.frame=CGRectMake(424, 0, buyView.frame.size.width, buyView.frame.size.height);
+    [self tapBuyBackground];
+    [self addChildViewController:shop];
+    [self.view addSubview:buyView];
     blackView.hidden=NO;
 }
 -(void)historyAction:(id)sender{
@@ -560,9 +592,16 @@
 {
     if([segue.identifier isEqualToString:@"pushDetail"])
     {
-        TBdetailViewController *detail =
-        segue.destinationViewController;
+//        TBdetailViewController *detail =
+//        segue.destinationViewController;
     }
+}
+-(void)dismissView{
+    [self popoverControllerDidDismissPopover:popover];
+    blackView.hidden=YES;
+    menuView.hidden=YES;
+    buyView.hidden=YES;
+    allTypeView.hidden=YES;
 }
 - (void)didReceiveMemoryWarning
 {

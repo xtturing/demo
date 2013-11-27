@@ -93,14 +93,20 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
         TBmailCell *cell = (TBmailCell*) [collectionView dequeueReusableCellWithReuseIdentifier:@"TBmailCellIdentifier"
                                                                                                  forIndexPath:indexPath];
-        cell.imgText=@"信封未选中";
+    if(indexPath.row==0){
+        cell.imgText=@"信封选中";
+        selectCellIndex=indexPath;
+    }else{
+      cell.imgText=@"信封未选中";
+    }
+    
         return cell;
    
     
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{    
-    int newRow=[indexPath row];
+    int newRow=(int)[indexPath row];
     int oldRow=(selectCellIndex!=nil)?[selectCellIndex row]:-1;
     if(newRow!=oldRow){
         TBmailCell *newcell=(TBmailCell *)[collectionView cellForItemAtIndexPath:indexPath];

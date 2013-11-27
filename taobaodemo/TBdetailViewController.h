@@ -60,10 +60,11 @@
     IBOutlet UIImageView *view3;
     
     IBOutlet UIView *blackView;
-    IBOutlet UIView *buyView;
+    UIView *buyView;
     UIView *bottom;
     UITextField *field;
 }
+-(void)dismissView;
 -(IBAction)menuButtonAction:(id)sender;
 -(IBAction)otherAction:(id)sender;
 @end

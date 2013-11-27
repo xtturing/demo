@@ -16,6 +16,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TBbuyViewController.h"
 #import "TBdetailViewController.h"
+#import "TBViewController.h"
 @interface TBShopViewController (){
     
 }
@@ -145,20 +146,32 @@
         
     }else{
         TBdetailViewController *view=[self.storyboard instantiateViewControllerWithIdentifier:@"detailViewController"];
-        [self.navigationController pushViewController:view animated:YES];
+         [self.navigationController pushViewController:view animated:YES];
+        if([self.parentViewController isKindOfClass:[TBdetailViewController class]]){
+            TBdetailViewController *td=(TBdetailViewController *)self.parentViewController;
+            [td dismissView];
+        }else{
+            TBViewController *tv=(TBViewController *)self.parentViewController;
+            [tv dismissView];
+        }
     }
 }
-
+-(IBAction)buyAction:(id)sender{
+    TBbuyViewController *buy=[self.storyboard instantiateViewControllerWithIdentifier:@"TBbuyViewController"];
+    [self.navigationController pushViewController:buy animated:YES];
+    if([self.parentViewController isKindOfClass:[TBdetailViewController class]]){
+        TBdetailViewController *td=(TBdetailViewController *)self.parentViewController;
+        [td dismissView];
+    }else{
+        TBViewController *tv=(TBViewController *)self.parentViewController;
+        [tv dismissView];
+    }
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"buyView"])
-    {
-        
-    }
-}
+
 @end

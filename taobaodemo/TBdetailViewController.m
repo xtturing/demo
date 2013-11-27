@@ -11,6 +11,7 @@
 #import "TBFont.h"
 #import "TBrecomendCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "TBShopViewController.h"
 @interface TBdetailViewController (){
     UIPopoverController *popover;
     UIView *menuView;
@@ -189,7 +190,6 @@
     menuView.hidden=YES;
     [self.view addSubview:menuView];
     
-    [self tapBuyBackground];
 }
 -(void)tapBuyBackground //在ViewDidLoad中调用
 {
@@ -218,14 +218,14 @@
 }
 -(void)tapBuyOnce:(UITapGestureRecognizer*)recognizer//手势方法
 {
-    buyView.hidden=YES;
+    [buyView removeFromSuperview];
     blackView.hidden=YES;
     blackView.frame=CGRectMake(0,0, 1024, 768);
     [blackView removeGestureRecognizer:recognizer];
 }
 -(void)tapBuyRight:(UISwipeGestureRecognizer*)recognizer//手势方法
 {
-    buyView.hidden=YES;
+    [buyView removeFromSuperview];
     blackView.hidden=YES;
     blackView.frame=CGRectMake(0,0, 1024, 768);
 }
@@ -322,6 +322,7 @@
 
 
 -(void)wangwang:(id)sender{
+    [self dismissView];
     blackView.hidden=NO;
     if(wangwang){
         wangwang.hidden=NO;
@@ -377,6 +378,7 @@
 }
 
 -(void)homeAction:(id)sender{
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMenuOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
@@ -384,17 +386,42 @@
     blackView.hidden=NO;
 }
 -(void)loginAction:(id)sender{
+    [self dismissView];
+    UIViewController *viewController=[[UIViewController alloc] init];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
+    view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];
     
+    //    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    //    [btn setImage:[UIImage imageNamed:@"立即购买"] forState:UIControlStateNormal];
+    //    [btn setImage:[UIImage imageNamed:@"立即购买点击"] forState:UIControlStateHighlighted];
+    //    [btn addTarget:self action:@selector(shopAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [btn setFrame:CGRectMake(87, 611, 130, 40)];
+    //    [view addSubview:btn];
+    
+    
+    
+    [viewController setView:view];
+    popover = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    [popover setPopoverContentSize:CGSizeMake(510,674)];
+    [popover presentPopoverFromRect:((UIButton *)sender).frame
+                             inView:toolBarView
+           permittedArrowDirections:UIPopoverArrowDirectionUp
+                           animated:NO];
 }
 -(void)messageAction:(id)sender{
     
 }
 -(void)shopAction:(id)sender{
-    [self popoverControllerDidDismissPopover:popover];
+    [self dismissView];
     UITapGestureRecognizer * blacktap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBuyOnce:)];//定义一个手势
     [blacktap setNumberOfTouchesRequired:1];//触击次数这里设为1
     [blackView addGestureRecognizer:blacktap];//添加手势到View中
-    buyView.hidden=NO;
+    TBShopViewController *shop= [self.storyboard instantiateViewControllerWithIdentifier:@"TBShopViewController"];
+    buyView=shop.view;
+    buyView.frame=CGRectMake(424, 0, buyView.frame.size.width, buyView.frame.size.height);
+    [self tapBuyBackground];
+    [self addChildViewController:shop];
+    [self.view addSubview:buyView];
     blackView.frame=CGRectMake(0, 0, 424, 768);
     blackView.hidden=NO;
 }
@@ -405,6 +432,7 @@
     
 }
 -(void)moreOther:(id)sender{
+    [self dismissView];
     UIViewController *viewController=[[UIViewController alloc] init];
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 510, 674)];
     view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"SKU"]];
@@ -539,5 +567,14 @@
     wangwang.frame=CGRectMake(177, 10, 670, 748);
     bottom.frame=CGRectMake(0, wangwang.frame.size.height-61, 670, 61);
     return YES;
+}
+-(void)dismissView{
+    if(wangwang){
+        wangwang.hidden=YES;
+    }
+    [self popoverControllerDidDismissPopover:popover];
+    blackView.hidden=YES;
+    menuView.hidden=YES;
+    buyView.hidden=YES;
 }
 @end

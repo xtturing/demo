@@ -21,5 +21,5 @@
     IBOutlet UILabel *priceLab;
     IBOutlet UIButton *buyBtn;
 }
-
+-(IBAction)buyAction:(id)sender;
 @end
